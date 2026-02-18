@@ -1,67 +1,84 @@
 export default function Hero() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="home" className="pt-20 pb-16 md:pt-28 md:pb-24 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container-custom">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
-            Il Tuo Sito Web Professionale
-            <span className="block text-gold-500">Pronto in 7 Giorni</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-            Creiamo siti web moderni e performanti per <strong>dentisti</strong>, <strong>medici</strong> e <strong>avvocati</strong>. 
-            Design professionale, mobile-first e SEO ottimizzato.
-          </p>
+    <section className="relative min-h-screen flex items-center justify-center bg-grid noise">
+      {/* Background blobs */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-accent/20 rounded-full blur-[128px]" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent-2/15 rounded-full blur-[128px]" />
 
-          {/* Social Proof */}
-          <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm md:text-base">
-            <div className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="text-gray-700 font-medium">Consegna in 7 giorni</span>
-            </div>
-            
-            <div className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="text-gray-700 font-medium">100% soddisfatti o rimborsati</span>
-            </div>
-            
-            <div className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
-              <svg className="w-5 h-5 text-gold-500" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <span className="text-gray-700 font-medium">Design premium</span>
-            </div>
-          </div>
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-light text-sm text-volt-300 mb-8 animate-fade-in">
+          <span className="w-2 h-2 rounded-full bg-accent-2 animate-pulse" />
+          Siti web per professionisti — da €700
+        </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => scrollToSection('contatti')}
-              className="btn-primary text-lg"
-            >
-              Richiedi Preventivo Gratuito
-            </button>
-            <button 
-              onClick={() => scrollToSection('servizi')}
-              className="btn-secondary text-lg"
-            >
-              Scopri i Nostri Servizi
-            </button>
-          </div>
+        {/* Headline */}
+        <h1 className="font-[family-name:var(--font-space)] text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8 animate-fade-in-up">
+          Il tuo studio merita
+          <br />
+          <span className="gradient-text">un sito all&apos;altezza</span>
+        </h1>
 
-          <div className="mt-12 text-gray-500 text-sm">
-            <p>✨ Nessun costo iniziale • Paghi solo a risultato ottenuto</p>
+        {/* Sub */}
+        <p className="text-lg md:text-xl text-volt-300 max-w-2xl mx-auto mb-12 animate-fade-in-up delay-200" style={{ opacity: 0 }}>
+          Creiamo siti web moderni, velocissimi e ottimizzati per i motori di ricerca.
+          Pensati per dentisti, medici e avvocati. Chiavi in mano, online in 7 giorni.
+        </p>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300" style={{ opacity: 0 }}>
+          <a
+            href="#contatti"
+            className="group px-8 py-4 rounded-full bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-lg transition-all hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1 animate-pulse-glow"
+          >
+            Richiedi il Tuo Sito
+            <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
+          </a>
+          <a
+            href="#processo"
+            className="px-8 py-4 rounded-full glass-light text-volt-200 font-medium text-lg hover:text-white hover:border-white/20 transition-all"
+          >
+            Come Funziona
+          </a>
+        </div>
+
+        {/* Browser mockup */}
+        <div className="mt-20 animate-fade-in-up delay-500" style={{ opacity: 0 }}>
+          <div className="relative mx-auto max-w-4xl">
+            <div className="gradient-border p-1">
+              <div className="bg-volt-800 rounded-[0.9rem] p-6 md:p-10">
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-3 h-3 rounded-full bg-red-500/60" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/60" />
+                  <div className="flex-1 mx-4 h-7 rounded-lg bg-volt-700/50 flex items-center px-3">
+                    <span className="text-xs text-volt-400">studiovolt.it/il-tuo-studio</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="col-span-2 space-y-3">
+                    <div className="h-4 bg-gradient-to-r from-accent/30 to-transparent rounded w-3/4" />
+                    <div className="h-3 bg-volt-700/50 rounded w-full" />
+                    <div className="h-3 bg-volt-700/50 rounded w-5/6" />
+                    <div className="h-3 bg-volt-700/50 rounded w-2/3" />
+                    <div className="mt-4 h-10 w-40 rounded-lg bg-gradient-to-r from-accent/40 to-accent-2/40" />
+                  </div>
+                  <div className="space-y-3">
+                    <div className="h-24 bg-volt-700/30 rounded-lg" />
+                    <div className="h-16 bg-volt-700/30 rounded-lg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-16 bg-accent/10 blur-3xl rounded-full" />
           </div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 rounded-full border-2 border-volt-500 flex items-start justify-center p-1.5">
+          <div className="w-1.5 h-3 rounded-full bg-accent animate-pulse" />
         </div>
       </div>
     </section>

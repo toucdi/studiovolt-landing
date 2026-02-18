@@ -1,174 +1,206 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  const quickLinks = [
+    { label: 'Servizi', href: '#servizi' },
+    { label: 'Come Funziona', href: '#come-funziona' },
+    { label: 'Chi Siamo', href: '#chi-siamo' },
+    { label: 'Contatti', href: '#contatti' }
+  ];
+
+  const services = [
+    'Siti Web Premium',
+    'SEO Ottimizzato',
+    'Mobile-First Design',
+    'Hosting Incluso',
+    'Supporto Dedicato'
+  ];
+
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    const element = document.getElementById(sectionId.replace('#', ''));
+    element?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <footer className="bg-black text-white">
-      <div className="container-custom py-16">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="mb-6">
-              <span className="text-3xl font-bold">
-                Studio <span className="text-gold-500">Volt</span>
-              </span>
-              <p className="text-gray-300 mt-3 max-w-md leading-relaxed">
-                Creiamo siti web professionali per dentisti, medici e avvocati. 
-                Design moderno, consegna rapida e risultati garantiti.
-              </p>
-            </div>
-
-            <div className="flex space-x-4">
-              <a 
-                href="mailto:info@studiovolt.it" 
-                className="w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center hover:bg-gold-600 transition-colors"
-                aria-label="Email"
-              >
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </a>
-              
-              <a 
-                href="tel:+391234567890" 
-                className="w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center hover:bg-gold-600 transition-colors"
-                aria-label="Telefono"
-              >
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </a>
-              
-              <a 
-                href="https://linkedin.com/company/studiovolt" 
-                className="w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center hover:bg-gold-600 transition-colors"
-                aria-label="LinkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Link Rapidi</h3>
-            <ul className="space-y-3">
-              <li>
-                <button 
-                  onClick={() => scrollToSection('home')}
-                  className="text-gray-300 hover:text-gold-500 transition-colors text-left"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('servizi')}
-                  className="text-gray-300 hover:text-gold-500 transition-colors text-left"
-                >
-                  Servizi
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('come-funziona')}
-                  className="text-gray-300 hover:text-gold-500 transition-colors text-left"
-                >
-                  Come Funziona
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('chi-siamo')}
-                  className="text-gray-300 hover:text-gold-500 transition-colors text-left"
-                >
-                  Chi Siamo
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('contatti')}
-                  className="text-gray-300 hover:text-gold-500 transition-colors text-left"
-                >
-                  Contatti
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Contatti</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
-                <svg className="w-5 h-5 text-gold-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <a href="mailto:info@studiovolt.it" className="text-gray-300 hover:text-white transition-colors">
-                  info@studiovolt.it
-                </a>
-              </li>
-              <li className="flex items-start space-x-3">
-                <svg className="w-5 h-5 text-gold-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <a href="tel:+391234567890" className="text-gray-300 hover:text-white transition-colors">
-                  +39 123 456 7890
-                </a>
-              </li>
-              <li className="flex items-start space-x-3">
-                <svg className="w-5 h-5 text-gold-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="text-gray-300">
-                  Lun-Ven: 9:00 - 18:00
-                </span>
-              </li>
-            </ul>
-
-            <div className="mt-6 pt-6 border-t border-gray-800">
-              <p className="text-sm text-gray-400 mb-2">
-                <strong>Studio Volt di Olivia Spendersen</strong>
-              </p>
-              <p className="text-sm text-gray-400 mb-1">
-                P.IVA: 12345678901
-              </p>
-              <p className="text-sm text-gray-400">
-                Codice Fiscale: SPNLVO85M41H501X
-              </p>
-            </div>
-          </div>
-        </div>
+    <footer className="relative overflow-hidden bg-gradient-to-b from-slate-900 to-black">
+      {/* Background elements */}
+      <div className="absolute inset-0">
+        <motion.div 
+          className="absolute top-10 left-20 w-64 h-64 bg-purple-600/5 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{ 
+            duration: 8,
+            repeat: Infinity,
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-40 w-80 h-80 bg-cyan-600/5 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.1, 1, 1.1],
+            opacity: [0.4, 0.7, 0.4],
+          }}
+          transition={{ 
+            duration: 10,
+            repeat: Infinity,
+          }}
+        />
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-              <p className="text-gray-400 text-sm">
-                © 2024 Studio Volt. Tutti i diritti riservati.
-              </p>
-              <div className="flex space-x-4 text-sm">
-                <a href="/privacy" className="text-gray-400 hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="/termini" className="text-gray-400 hover:text-white transition-colors">
-                  Termini di Servizio
-                </a>
+      <div className="relative z-10">
+        {/* Main Footer */}
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {/* Brand */}
+            <motion.div 
+              className="lg:col-span-2"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="mb-6">
+                <motion.div 
+                  className="text-3xl font-bold mb-4"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                    Studio
+                  </span>
+                  <span className="text-white">Volt</span>
+                </motion.div>
+                <p className="text-gray-300 text-lg leading-relaxed max-w-md">
+                  Siti web professionali che trasformano la presenza digitale dei professionisti italiani. 
+                  Design premium, consegna garantita in 7 giorni.
+                </p>
               </div>
+              
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-2 bg-green-500/20 border border-green-500/30 rounded-full px-4 py-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                  <span className="text-green-300 text-sm font-medium">Attualmente disponibili</span>
+                </div>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+                <h4 className="text-white font-semibold mb-3">Contattaci subito</h4>
+                <div className="space-y-2">
+                  <a 
+                    href="mailto:olivia@studiovolt.it" 
+                    className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
+                  >
+                    <div className="w-8 h-8 bg-purple-600/20 rounded-lg flex items-center justify-center group-hover:bg-purple-600/30 transition-colors">
+                      📧
+                    </div>
+                    olivia@studiovolt.it
+                  </a>
+                  <div className="flex items-center gap-3 text-gray-400">
+                    <div className="w-8 h-8 bg-purple-600/20 rounded-lg flex items-center justify-center">
+                      🕒
+                    </div>
+                    Risposta entro 24h
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-white font-semibold text-lg mb-6">Navigazione</h4>
+              <ul className="space-y-3">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <motion.button
+                      onClick={() => scrollToSection(link.href)}
+                      className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
+                      whileHover={{ x: 5 }}
+                    >
+                      <span className="w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {link.label}
+                    </motion.button>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-white font-semibold text-lg mb-6">I nostri servizi</h4>
+              <ul className="space-y-3">
+                {services.map((service, index) => (
+                  <li key={index} className="flex items-center gap-3 text-gray-400">
+                    <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full flex-shrink-0" />
+                    <span className="text-sm">{service}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 backdrop-blur-sm border border-purple-500/30 rounded-xl p-4">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">€700</div>
+                  <div className="text-xs text-gray-300">Tutto incluso</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <motion.div 
+          className="border-t border-white/10"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-7xl mx-auto px-6 py-12">
+            <div className="text-center bg-gradient-to-r from-purple-600/10 to-cyan-600/10 backdrop-blur-sm border border-purple-500/20 rounded-3xl p-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Pronto a portare il tuo studio online?
+              </h3>
+              <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+                Richiedi la tua bozza gratuita e scopri come possiamo trasformare la tua presenza digitale in 7 giorni.
+              </p>
+              <motion.button
+                onClick={() => scrollToSection('#contatti')}
+                className="bg-gradient-to-r from-purple-600 to-cyan-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Iniziamo subito →
+              </motion.button>
             </div>
-            
-            <div className="text-sm text-gray-400">
-              Siti web professionali • Design italiano • Consegna rapida
+          </div>
+        </motion.div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-6 py-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="text-gray-400 text-sm">
+                © {currentYear} Studio Volt. Tutti i diritti riservati. • P.IVA: [da definire]
+              </div>
+              <div className="flex items-center gap-6 text-sm text-gray-400">
+                <span>Made in Italy 🇮🇹</span>
+                <span>•</span>
+                <span>Roma & Italia</span>
+              </div>
             </div>
           </div>
         </div>
