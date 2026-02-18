@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Studio Volt - Landing Page Professionale
 
-## Getting Started
+Una landing page moderna e professionale per **Studio Volt**, una digital agency specializzata nella creazione di siti web per professionisti (dentisti, medici, avvocati).
 
-First, run the development server:
+## ✨ Caratteristiche
+
+- **Next.js 15** con TypeScript
+- **Tailwind CSS** per lo styling
+- **Design mobile-first** completamente responsive  
+- **Colori**: nero, bianco con accenti gold/amber
+- **Lingua**: Italiano
+- **Tono**: Professionale ma accessibile, non corporate/freddo
+
+## 🎯 Sezioni
+
+1. **Hero** - Headline forte con social proof ("Siti consegnati in 7 giorni", "100% soddisfatti o rimborsati")
+2. **Servizi** - Sito web €700, SEO base, mobile-first
+3. **Come Funziona** - 3 step: Ti contattiamo → Creiamo la bozza → Pubblichiamo
+4. **Chi Siamo** - Olivia Spendersen, Digital Consultant
+5. **Contatti** - Form semplice (nome/email/messaggio)
+6. **Footer** - P.IVA placeholder e informazioni di contatto
+
+## 🚀 Sviluppo
 
 ```bash
+# Installa le dipendenze
+npm install
+
+# Avvia il server di sviluppo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Apri http://localhost:3000 nel browser
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📦 Deploy su Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Push su GitHub** (o altro Git provider)
+2. **Connetti a Vercel**:
+   - Vai su [vercel.com](https://vercel.com)
+   - Clicca "New Project"
+   - Importa questo repository
+3. **Configura il dominio**:
+   - Aggiungi `studiovolt.it` nelle impostazioni del progetto
+   - Configura i DNS del dominio per puntare a Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Configurazione DNS per studiovolt.it
 
-## Learn More
+```
+Tipo: CNAME
+Nome: www
+Valore: cname.vercel-dns.com
 
-To learn more about Next.js, take a look at the following resources:
+Tipo: A
+Nome: @
+Valore: 76.76.19.61
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Colori Personalizzati
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Il progetto utilizza una palette di colori gold/amber personalizzata:
 
-## Deploy on Vercel
+- `gold-400`: #fbbf24
+- `gold-500`: #f59e0b (primary)
+- `gold-600`: #d97706
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📱 Mobile-First
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Il sito è ottimizzato mobile-first con:
+- Navigation mobile con hamburger menu
+- Form di contatto responsive
+- Sezioni ottimizzate per touch
+- Performance ottimizzate per dispositivi mobili
+
+## 📧 Contact Form
+
+Il form di contatto è funzionale e pronto per l'integrazione con servizi come:
+- Netlify Forms
+- EmailJS
+- API custom
+
+## 🔧 Tecnologie Utilizzate
+
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **Icons**: Heroicons (via SVG)
+- **Fonts**: Inter (Google Fonts)
+
+## 📄 Licenza
+
+© 2024 Studio Volt. Tutti i diritti riservati.
+
+---
+
+**Sviluppato per**: Studio Volt (studiovolt.it)  
+**Design**: Moderno, professionale, italiano  
+**Target**: Dentisti, Medici, Avvocati  
+**Consegna**: 7 giorni garantiti
