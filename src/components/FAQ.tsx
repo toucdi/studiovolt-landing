@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -28,49 +29,61 @@ const faqs = [
   },
 ];
 
-function FAQItem({ q, a }: { q: string; a: string }) {
+function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-volt-700/50">
+    <div className="border-t border-slate-100 last:border-b py-8">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-5 text-left group"
+        className="w-full flex items-center justify-between text-left group"
       >
-        <span className="font-semibold text-volt-100 group-hover:text-white transition-colors pr-4">
+        <span className="text-lg md:text-xl font-bold text-black group-hover:text-slate-600 transition-colors uppercase tracking-tight">
+          <span className="inline-block w-8 text-xs font-medium text-slate-400">0{index + 1}</span>
           {q}
         </span>
-        <span
-          className={`shrink-0 w-8 h-8 rounded-full glass-light flex items-center justify-center text-accent transition-transform ${
-            open ? "rotate-45" : ""
-          }`}
-        >
-          +
+        <span className="text-2xl font-light text-black">
+          {open ? "−" : "+"}
         </span>
       </button>
-      <div
-        className={`overflow-hidden transition-all duration-300 ${
-          open ? "max-h-60 pb-5" : "max-h-0"
-        }`}
-      >
-        <p className="text-volt-400 leading-relaxed">{a}</p>
-      </div>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <p className="text-slate-500 max-w-2xl pt-6 pl-8 leading-relaxed">
+              {a}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
 
 export default function FAQ() {
   return (
-    <section id="faq" className="relative py-24 md:py-32 bg-volt-800/50">
-      <div className="max-w-3xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-accent text-sm font-semibold tracking-widest uppercase">FAQ</span>
-          <h2 className="font-[family-name:var(--font-space)] text-4xl md:text-5xl font-bold mt-4">
-            Domande <span className="gradient-text">frequenti</span>
-          </h2>
+    <section id="faq" className="bg-white py-24 md:py-40">
+      <div className="container-minimal">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+          <div className="md:col-span-5">
+            <h2 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-[0.9]">
+              Domande <br />
+              <span className="text-slate-400 underline decoration-1 underline-offset-8">Frequenti</span>
+            </h2>
+          </div>
+          <div className="md:col-span-7 flex items-end">
+            <p className="text-slate-500 text-lg max-w-sm">
+              Tutto quello che devi sapere sul tuo nuovo sito web professionale.
+            </p>
+          </div>
         </div>
-        <div>
-          {faqs.map((faq) => (
-            <FAQItem key={faq.q} {...faq} />
+
+        <div className="max-w-4xl">
+          {faqs.map((faq, i) => (
+            <FAQItem key={faq.q} {...faq} index={i} />
           ))}
         </div>
       </div>

@@ -1,3 +1,5 @@
+"use client";
+
 const features = [
   "Design personalizzato",
   "Fino a 5 pagine",
@@ -15,61 +17,59 @@ const features = [
 
 export default function Pricing() {
   return (
-    <section id="prezzi" className="relative py-24 md:py-32">
-      {/* BG glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/5 rounded-full blur-[128px]" />
+    <section id="prezzi" className="bg-white py-24 md:py-40">
+      <div className="container-minimal border-t border-black pt-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          {/* Header */}
+          <div className="md:col-span-12 mb-12">
+            <h2 className="text-4xl md:text-8xl font-black text-black tracking-tighter uppercase leading-[0.85]">
+              Costo <br />
+              <span className="text-slate-200">Trasparente.</span>
+            </h2>
+          </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-accent text-sm font-semibold tracking-widest uppercase">Pricing</span>
-          <h2 className="font-[family-name:var(--font-space)] text-4xl md:text-5xl font-bold mt-4">
-            Un prezzo.
-            <br />
-            <span className="gradient-text">Zero sorprese.</span>
-          </h2>
-        </div>
-
-        {/* Pricing Card */}
-        <div className="relative">
-          <div className="gradient-border rounded-3xl p-8 md:p-12 glow-accent">
-            <div className="relative z-10 text-center">
-              {/* Price */}
-              <div className="mb-2">
-                <span className="text-volt-400 text-lg">Pacchetto completo</span>
+          {/* Price */}
+          <div className="md:col-span-6 flex flex-col justify-between py-12 border-t border-slate-100">
+            <div>
+              <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-black mb-8">
+                PACCHETTO ALL-INCLUSIVE
               </div>
-              <div className="flex items-baseline justify-center gap-1 mb-2">
-                <span className="font-[family-name:var(--font-space)] text-7xl md:text-8xl font-bold gradient-text">
-                  €700
-                </span>
+              <div className="text-8xl md:text-[10rem] font-black tracking-tighter text-black leading-none mb-4">
+                €700
               </div>
-              <p className="text-volt-400 mb-10">Una tantum · Nessun abbonamento nascosto</p>
+              <p className="text-slate-500 text-lg font-light">Una tantum. Tutto incluso. Nessun extra nascosto.</p>
+            </div>
 
-              {/* Features grid */}
-              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-left max-w-lg mx-auto mb-10">
-                {features.map((f) => (
-                  <div key={f} className="flex items-center gap-3">
-                    <div className="shrink-0 w-5 h-5 rounded-full bg-accent-2/20 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-accent-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-sm text-volt-200">{f}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTA */}
+            <div className="mt-12">
               <a
                 href="#contatti"
-                className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-lg transition-all hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1"
+                className="btn-minimal w-full md:w-auto text-xl px-16 py-6"
               >
-                Voglio il Mio Sito
-                <span>→</span>
+                Inizia il Progetto
               </a>
+              <p className="text-[10px] text-slate-400 mt-6 font-bold tracking-widest uppercase">
+                Dominio e hosting inclusi per il 1° anno
+              </p>
+            </div>
+          </div>
 
-              <p className="text-volt-500 text-xs mt-4">
-                Hosting dal 2° anno: €120/anno · Pagine extra: €100/cad
+          {/* Features */}
+          <div className="md:col-span-5 md:col-start-8 border-t border-slate-100 py-12">
+            <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-12">Cosa è incluso</h4>
+            <div className="grid grid-cols-1 gap-6">
+              {features.map((feature) => (
+                <div key={feature} className="flex items-center gap-4 group">
+                  <div className="w-2 h-2 bg-black opacity-20 group-hover:opacity-100 transition-opacity" />
+                  <span className="text-sm font-bold tracking-widest uppercase text-black">
+                    {feature}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-16 pt-8 border-t border-slate-50">
+              <p className="text-xs text-slate-400 leading-relaxed italic">
+                Sviluppato con metodologie agili. Consegna garantita in 7 giorni lavorativi.
               </p>
             </div>
           </div>

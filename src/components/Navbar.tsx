@@ -1,96 +1,106 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navLinks = [
+  { name: "Servizi", href: "#servizi" },
+  { name: "Metodo", href: "#processo" },
+  { name: "Prezzi", href: "#prezzi" },
+  { name: "FAQ", href: "#faq" },
+];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const links = [
-    { label: "Servizi", href: "#servizi" },
-    { label: "Come Funziona", href: "#processo" },
-    { label: "Prezzi", href: "#prezzi" },
-    { label: "FAQ", href: "#faq" },
-  ];
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass py-3 shadow-lg shadow-black/20" : "py-5 bg-gradient-to-b from-volt-900 via-volt-900/80 to-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-100 py-4"
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="container-minimal flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-2 flex items-center justify-center font-bold text-white text-sm group-hover:scale-110 transition-transform">
-            ⚡
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          href="#"
+          className="flex items-center gap-2 group"
+        >
+          <div className="w-8 h-8 bg-black flex items-center justify-center text-white font-bold">
+            V
           </div>
-          <span className="font-[family-name:var(--font-space)] text-xl font-bold text-volt-50">
-            Studio <span className="gradient-text">Volt</span>
+          <span className="text-xl font-bold tracking-tighter text-black uppercase">
+            Studio Volt
           </span>
-        </a>
+        </motion.a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <a
-              key={link.href}
+        <div className="hidden md:flex items-center gap-12">
+          {navLinks.map((link, i) => (
+            <motion.a
+              key={link.name}
+              initial={{ opacity: 0, y: -4 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
               href={link.href}
-              className="text-volt-300 hover:text-white transition-colors text-sm tracking-wide"
+              className="text-sm font-medium text-black uppercase tracking-widest"
             >
-              {link.label}
-            </a>
+              {link.name}
+            </motion.a>
           ))}
-          <a
+          <motion.a
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4 }}
             href="#contatti"
-            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-accent to-accent-light text-white text-sm font-semibold hover:shadow-lg hover:shadow-accent/30 transition-all hover:-translate-y-0.5"
+            className="bg-black text-white px-6 py-2 text-sm uppercase tracking-widest"
           >
-            Inizia Ora
-          </a>
+            Contattaci
+          </motion.a>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-volt-200 p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden text-black p-2"
+          onClick={() => setMobileMenu(!mobileMenu)}
         >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            {mobileOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
+          {mobileMenu ? (
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 8h16M4 16h16" /></svg>
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="md:hidden glass mt-2 mx-4 rounded-2xl p-6 animate-fade-in">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="block py-3 text-volt-200 hover:text-white transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#contatti"
-            onClick={() => setMobileOpen(false)}
-            className="mt-4 block text-center px-5 py-3 rounded-full bg-gradient-to-r from-accent to-accent-light text-white font-semibold"
+      <AnimatePresence>
+        {mobileMenu && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 md:hidden shadow-xl"
           >
-            Inizia Ora
-          </a>
-        </div>
-      )}
+            <div className="flex flex-col gap-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-lg font-medium text-black border-b border-slate-50 pb-2 uppercase tracking-widest"
+                  onClick={() => setMobileMenu(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <a
+                href="#contatti"
+                className="bg-black text-white uppercase tracking-widest py-4 text-center"
+                onClick={() => setMobileMenu(false)}
+              >
+                Contattaci
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

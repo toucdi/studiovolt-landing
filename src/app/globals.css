@@ -1,121 +1,55 @@
 @import "tailwindcss";
 
 @theme {
-  --color-volt-900: #0a0a0f;
-  --color-volt-800: #12121a;
-  --color-volt-700: #1a1a2e;
-  --color-volt-600: #252540;
-  --color-volt-500: #3a3a5c;
-  --color-volt-400: #6c6c8a;
-  --color-volt-300: #9d9db5;
-  --color-volt-200: #c8c8d8;
-  --color-volt-100: #e8e8f0;
-  --color-volt-50: #f5f5fa;
-  --color-accent: #6d5aff;
-  --color-accent-light: #8b7aff;
-  --color-accent-glow: rgba(109, 90, 255, 0.3);
-  --color-accent-2: #00d4aa;
-  --color-accent-2-glow: rgba(0, 212, 170, 0.3);
+  --font-sans: "Inter", sans-serif;
+
+  /* Monochromatic Swiss Palette */
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-primary: #000000;
+  --color-accent: #0f172a;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  body {
+    @apply bg-background text-text font-sans antialiased;
+    letter-spacing: -0.01em;
+  }
 }
 
-body {
-  background-color: var(--color-volt-900);
-  color: var(--color-volt-100);
+@layer components {
+  .btn-minimal {
+    @apply px-8 py-3 bg-black text-white font-medium transition-all duration-200 hover:bg-slate-800 disabled:opacity-50 flex items-center justify-center gap-2;
+  }
+
+  .btn-outline-minimal {
+    @apply px-8 py-3 border border-black text-black font-medium transition-all duration-200 hover:bg-black hover:text-white flex items-center justify-center gap-2;
+  }
+
+  .card-minimal {
+    @apply border border-border bg-white p-8 transition-all duration-300;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-40;
+  }
+
+  .container-minimal {
+    @apply max-w-7xl mx-auto px-6 md:px-12;
+  }
 }
 
-.glass {
-  background: rgba(26, 26, 46, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(109, 90, 255, 0.15);
+/* Remove flashy animations */
+.no-flashy {
+  animation: none !important;
+  transform: none !important;
 }
 
-.glass-light {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.input:focus {
+  @apply border-primary outline-none ring-3 ring-primary/20;
 }
-
-.gradient-text {
-  background: linear-gradient(135deg, #6d5aff 0%, #00d4aa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.glow-accent {
-  box-shadow: 0 0 40px rgba(109, 90, 255, 0.2), 0 0 80px rgba(109, 90, 255, 0.1);
-}
-
-.gradient-border {
-  position: relative;
-  background: var(--color-volt-800);
-  border-radius: 1rem;
-}
-
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: 1rem;
-  padding: 1px;
-  background: linear-gradient(135deg, #6d5aff, transparent 50%, #00d4aa);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(109, 90, 255, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(109, 90, 255, 0.6), 0 0 80px rgba(109, 90, 255, 0.2); }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
-
-.bg-grid {
-  background-image:
-    linear-gradient(rgba(109, 90, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(109, 90, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-.noise {
-  position: relative;
-}
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-volt-900); }
-::-webkit-scrollbar-thumb { background: var(--color-volt-600); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }

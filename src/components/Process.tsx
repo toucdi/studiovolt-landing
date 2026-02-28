@@ -1,61 +1,83 @@
+"use client";
+import { motion, Variants } from "framer-motion";
+
 const steps = [
   {
     num: "01",
-    title: "Ci Contatti",
-    desc: "Scrivici una mail o compila il form. Ti rispondiamo entro 24 ore con una proposta personalizzata.",
-    accent: "from-accent to-accent-light",
+    title: "Consulenza",
+    desc: "Analizziamo le necessità del tuo studio attraverso una diagnosi digitale approfondita.",
   },
   {
     num: "02",
-    title: "Creiamo il Tuo Sito",
-    desc: "In 5 giorni lavorativi progettiamo e sviluppiamo il tuo sito. Ti mostriamo una bozza per il tuo feedback.",
-    accent: "from-accent-light to-accent-2",
+    title: "Progettazione",
+    desc: "Sviluppiamo la tua infrastruttura con rigore tecnico e precisione estetica in 5 giorni.",
   },
   {
     num: "03",
-    title: "Vai Online",
-    desc: "Dopo la tua approvazione, pubblichiamo il sito e configuriamo dominio, email e analytics.",
-    accent: "from-accent-2 to-emerald-400",
+    title: "Lancio",
+    desc: "Configuriamo la presenza online definitiva, pronta per accogliere nuovi pazienti.",
   },
 ];
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
+  },
+};
+
 export default function Process() {
   return (
-    <section id="processo" className="relative py-24 md:py-32 bg-volt-800/50">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-accent-2 text-sm font-semibold tracking-widest uppercase">Come Funziona</span>
-          <h2 className="font-[family-name:var(--font-space)] text-4xl md:text-5xl font-bold mt-4">
-            Da zero a online
-            <br />
-            <span className="gradient-text">in 3 semplici passi</span>
+    <section id="processo" className="section-padding bg-white overflow-hidden">
+      <div className="container-minimal">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-24"
+        >
+          <span className="text-sm font-medium tracking-[0.2em] uppercase text-muted mb-4 block">Metodologia</span>
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-black">
+            L&apos;approccio Studio Volt.
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Steps */}
-        <div className="relative max-w-3xl mx-auto">
-          {/* Vertical line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-accent-2 to-transparent hidden md:block" />
-
-          <div className="space-y-12">
-            {steps.map((step) => (
-              <div key={step.num} className="flex gap-6 md:gap-10 items-start group">
-                {/* Number */}
-                <div className={`shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${step.accent} flex items-center justify-center font-[family-name:var(--font-space)] text-xl font-bold text-white shadow-lg group-hover:scale-110 transition-transform`}>
-                  {step.num}
-                </div>
-                {/* Content */}
-                <div className="pt-2">
-                  <h3 className="font-[family-name:var(--font-space)] text-2xl font-bold text-volt-50 mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-volt-400 leading-relaxed">{step.desc}</p>
-                </div>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-x-12 gap-y-24"
+        >
+          {steps.map((step) => (
+            <motion.div key={step.num} variants={itemVariants} className="flex flex-col gap-8 group">
+              <div className="text-8xl md:text-9xl font-bold tracking-tighter text-slate-50 group-hover:text-black transition-colors duration-500">
+                {step.num}
               </div>
-            ))}
-          </div>
-        </div>
+              <div className="flex flex-col gap-4">
+                <h3 className="text-xl font-bold text-black uppercase tracking-widest">
+                  {step.title}
+                </h3>
+                <p className="text-slate-500 font-light leading-relaxed text-lg">
+                  {step.desc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
