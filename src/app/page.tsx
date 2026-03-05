@@ -4,6 +4,7 @@ import Stats from "@/components/Stats";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Pricing from "@/components/Pricing";
+import Solutions from "@/components/Solutions";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ export default function Home() {
       <Services />
       <Process />
       <Pricing />
+      <Solutions />
       <FAQ />
       <CTA />
       <Footer />
