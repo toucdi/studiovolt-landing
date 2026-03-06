@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   title: "Studio Volt — Siti Web Professionali per il Tuo Studio",
   description: "Specializzati nel creare siti web eleganti e ad alte prestazioni per studi dentistici e legali. Minimali, veloci, premium.",
   metadataBase: new URL("https://studiovolt.it"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Studio Volt — Siti Web Professionali",
     description: "Il tuo studio merita una presenza online all'altezza. €700, tutto incluso.",

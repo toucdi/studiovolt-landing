@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Servizi", href: "#servizi" },
@@ -25,9 +26,13 @@ export default function Navbar() {
           href="#"
           className="flex items-center gap-2 group"
         >
-          <div className="w-8 h-8 bg-black flex items-center justify-center text-white font-bold">
-            V
-          </div>
+          <Image
+            src="/logo-v.png"
+            alt="Studio Volt"
+            width={32}
+            height={32}
+            className="w-8 h-8 object-contain"
+          />
           <span className="text-xl font-bold tracking-tighter text-black uppercase">
             Studio Volt
           </span>
