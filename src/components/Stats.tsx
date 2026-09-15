@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "7", label: " GIORNI PER IL LANCIO" },
-  { value: "€700", label: "PREZZO TRASPARENTE" },
-  { value: "100%", label: "MOBILE RESPONSIVE" },
-  { value: "∞", label: "SUPPORTO INCLUSO" },
+  { value: "24/7", label: "AGENTI SEMPRE ATTIVI" },
+  { value: "80%", label: "TEMPO RISPARMIATO" },
+  { value: "100%", label: "OPERATIVITÀ ITALIANA" },
+  { value: "∞", label: "TASK AUTOMATIZZATI" },
 ];
 
 export default function Stats() {

@@ -25,13 +25,13 @@ export default function Hero() {
             <div className="flex items-center gap-4 mb-12">
               <span className="w-12 h-px bg-black" />
               <span className="text-xs font-bold tracking-[0.4em] uppercase text-black">
-                Estetica Svizzera / Performance Italiana
+                Agenti AI / Operativi
               </span>
             </div>
 
             <h1 className="text-6xl md:text-[9rem] font-black tracking-tighter leading-[0.8] text-black uppercase mb-16">
-              Studio <br />
-              <span className="text-slate-200">Volt.</span>
+              Agenti AI <br />
+              <span className="text-slate-200">che lavorano.</span>
             </h1>
           </motion.div>
 
@@ -43,7 +43,7 @@ export default function Hero() {
               className="md:col-span-7"
             >
               <p className="text-xl md:text-3xl text-black font-medium leading-tight tracking-tight">
-                Creiamo l&apos;eccellenza digitale per i professionisti che non accettano compromessi. Design minimale, impatto massimo.
+                Non chatbot. Agenti operativi che gestiscono inbox, seguono lead, automatizzano processi. Tecnologia concreta per PMI e professionisti italiani.
               </p>
             </motion.div>
 
@@ -53,11 +53,11 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="md:col-span-4 md:col-start-9 flex flex-col gap-6"
             >
-              <a href="#servizi" className="btn-minimal text-xl py-6">
-                Avvia Progetto — €700
+              <a href="#contatti" className="btn-minimal text-xl py-6">
+                Scopri il Tuo Agente
               </a>
               <p className="text-[10px] font-bold tracking-widest uppercase text-slate-400">
-                Disponibilità limitata / 05 Progetti mese
+                Preventivo su misura / Consulenza gratuita
               </p>
             </motion.div>
           </div>

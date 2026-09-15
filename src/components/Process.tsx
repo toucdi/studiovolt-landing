@@ -4,18 +4,18 @@ import { motion, Variants } from "framer-motion";
 const steps = [
   {
     num: "01",
-    title: "Consulenza",
-    desc: "Analizziamo le necessità del tuo studio attraverso una diagnosi digitale approfondita.",
+    title: "Discovery",
+    desc: "Analizziamo i tuoi processi attuali. Identifichiamo le attività ripetitive, i colli di bottiglia, le opportunità per l'automazione.",
   },
   {
     num: "02",
-    title: "Progettazione",
-    desc: "Sviluppiamo la tua infrastruttura con rigore tecnico e precisione estetica in 5 giorni.",
+    title: "Agente Live",
+    desc: "Configuriamo e attiviamo l'agente. Integrato con le tue piattaforme (email, CRM, documenti), inizia a lavorare. Test, affinamento, go-live.",
   },
   {
     num: "03",
-    title: "Lancio",
-    desc: "Configuriamo la presenza online definitiva, pronta per accogliere nuovi pazienti.",
+    title: "Evoluzione",
+    desc: "L'agente impara. Monitoriamo le performance, ottimizziamo le routine, aggiungiamo capacità. Supporto continuo incluso.",
   },
 ];
 
@@ -49,9 +49,9 @@ export default function Process() {
           transition={{ duration: 0.8 }}
           className="mb-24"
         >
-          <span className="text-sm font-medium tracking-[0.2em] uppercase text-muted mb-4 block">Metodologia</span>
+          <span className="text-sm font-medium tracking-[0.2em] uppercase text-muted mb-4 block">Come lavoriamo</span>
           <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-black">
-            L&apos;approccio Studio Volt.
+            Dall&apos;idea all&apos;operatività.
           </h2>
         </motion.div>
 

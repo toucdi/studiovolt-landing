@@ -4,28 +4,28 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "Quanto tempo ci vuole per avere il sito pronto?",
-    a: "In media 7 giorni lavorativi dalla conferma dell'ordine. Ti mostriamo una bozza al giorno 5 per raccogliere il tuo feedback.",
+    q: "Cosa intendete per 'agente AI operativo'?",
+    a: "Non un semplice chatbot. Un sistema che lavora autonomamente: legge email, classifica richieste, risponde, esegue task, si integra con i tuoi tool (CRM, documenti, calendari). Fa lavoro reale, 24/7.",
   },
   {
-    q: "Devo fornire i contenuti (testi, foto)?",
-    a: "Idealmente sì, ma non è obbligatorio. Possiamo aiutarti a scrivere i testi e utilizzare foto professionali royalty-free se necessario.",
+    q: "Quali integrazioni supportate?",
+    a: "Email (Gmail, Outlook), CRM (HubSpot, Pipedrive), documenti (Google Drive, Dropbox), calendari, Slack, Notion, e molti altri. Se usi un tool standard, probabilmente lo supportiamo o possiamo integrarlo.",
   },
   {
-    q: "Posso modificare il sito dopo la consegna?",
-    a: "Certo! Ti forniamo l'accesso completo. Per i primi 30 giorni, piccole modifiche sono incluse nel prezzo. Dopo, offriamo pacchetti di assistenza a partire da €50/mese.",
+    q: "I miei dati sono al sicuro?",
+    a: "Sì. Tutto in conformità GDPR. I dati restano in Europa, non vengono usati per training di modelli pubblici. Accessi tracciati, crittografia end-to-end, contratto DPA disponibile.",
   },
   {
-    q: "Il dominio e l'hosting sono inclusi?",
-    a: "Sì, dominio .it e hosting sono inclusi per il primo anno. Dal secondo anno il rinnovo è di €120/anno per hosting + dominio.",
+    q: "Quanto costa realmente un agente?",
+    a: "Dipende da scope e complessità. Range indicativo: da €2.000 one-time + manutenzione, oppure canone mensile da €500. Ti diamo un preventivo dettagliato dopo la discovery gratuita.",
   },
   {
-    q: "Il sito sarà ottimizzato per Google?",
-    a: "Assolutamente. Ogni sito include ottimizzazione SEO on-page: struttura corretta, meta tag, velocità di caricamento e markup schema per attività locali.",
+    q: "L'agente può sbagliare? Come lo controllate?",
+    a: "Sì, può sbagliare. Per questo lavoriamo con approval loop su azioni critiche, log completi, dashboard di monitoraggio. Tu vedi tutto quello che fa. Nel tempo migliora, ma la supervisione umana resta importante.",
   },
   {
-    q: "Lavorate solo con professionisti sanitari?",
-    a: "Ci specializziamo in studi medici, dentistici e legali, ma lavoriamo con qualsiasi professionista che necessiti di una presenza online efficace.",
+    q: "Posso iniziare con un progetto piccolo?",
+    a: "Assolutamente. Molti clienti partono con un caso d'uso limitato (es. solo gestione inbox) e poi espandono. È il modo migliore per testare il valore prima di investire su larga scala.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function FAQ() {
           </div>
           <div className="md:col-span-7 flex items-end">
             <p className="text-slate-500 text-lg max-w-sm">
-              Tutto quello che devi sapere sul tuo nuovo sito web professionale.
+              Tutto quello che devi sapere sugli agenti AI operativi per la tua azienda.
             </p>
           </div>
         </div>

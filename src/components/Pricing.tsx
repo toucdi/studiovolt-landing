@@ -1,18 +1,18 @@
 "use client";
 
 const features = [
-  "Design personalizzato",
-  "Fino a 5 pagine",
-  "Responsive mobile-first",
-  "SEO on-page ottimizzato",
-  "Certificato SSL / HTTPS",
-  "Cookie banner GDPR",
-  "Google Analytics configurato",
-  "Form di contatto",
-  "Mappa Google integrata",
-  "Hosting primo anno incluso",
-  "Dominio .it incluso",
-  "Supporto post-lancio 30gg",
+  "Analisi processi e discovery",
+  "Configurazione agente AI",
+  "Integrazione piattaforme esistenti",
+  "Training su dati aziendali",
+  "Dashboard monitoraggio",
+  "Accesso API e log completi",
+  "Sicurezza e privacy GDPR",
+  "Supporto e manutenzione",
+  "Aggiornamenti inclusi",
+  "Ottimizzazione continua",
+  "Backup e disaster recovery",
+  "Documentazione tecnica completa",
 ];
 
 export default function Pricing() {
@@ -23,8 +23,8 @@ export default function Pricing() {
           {/* Header */}
           <div className="md:col-span-12 mb-12">
             <h2 className="text-4xl md:text-8xl font-black text-black tracking-tighter uppercase leading-[0.85]">
-              Costo <br />
-              <span className="text-slate-200">Trasparente.</span>
+              Pacchetti <br />
+              <span className="text-slate-200">su misura.</span>
             </h2>
           </div>
 
@@ -32,15 +32,17 @@ export default function Pricing() {
           <div className="md:col-span-6 flex flex-col justify-between py-12 border-t border-slate-100">
             <div>
               <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-black mb-8">
-                SITO WEB PROFESSIONALE
+                AGENTE AI OPERATIVO
               </div>
-              <div className="flex items-baseline gap-2">
-                <span className="text-slate-400 text-2xl md:text-4xl font-light tracking-tight">a partire da</span>
+              <div className="flex items-baseline gap-2 mb-4">
+                <span className="text-slate-400 text-2xl md:text-3xl font-light tracking-tight">Da configurare insieme</span>
               </div>
-              <div className="text-8xl md:text-[10rem] font-black tracking-tighter text-black leading-none mb-4">
-                €700
+              <div className="text-5xl md:text-7xl font-black tracking-tighter text-black leading-none mb-6">
+                Preventivo
               </div>
-              <p className="text-slate-500 text-lg font-light">Una tantum. Tutto incluso. Nessun extra nascosto.</p>
+              <p className="text-slate-500 text-lg font-light leading-relaxed">
+                Ogni azienda è diversa. Analizziamo il tuo caso, definiamo scope e obiettivi, ti presentiamo un preventivo chiaro. Modello one-time + manutenzione oppure canone mensile all-inclusive.
+              </p>
             </div>
 
             <div className="mt-12">
@@ -48,10 +50,10 @@ export default function Pricing() {
                 href="#contatti"
                 className="btn-minimal w-full md:w-auto text-xl px-16 py-6"
               >
-                Inizia il Progetto
+                Richiedi Preventivo
               </a>
               <p className="text-[10px] text-slate-400 mt-6 font-bold tracking-widest uppercase">
-                Dominio e hosting inclusi per il 1° anno
+                Consulenza gratuita / Risposta entro 24 ore
               </p>
             </div>
           </div>
@@ -72,7 +74,7 @@ export default function Pricing() {
 
             <div className="mt-16 pt-8 border-t border-slate-50">
               <p className="text-xs text-slate-400 leading-relaxed italic">
-                Sviluppato con metodologie agili. Consegna garantita in 7 giorni lavorativi.
+                Setup e go-live tipicamente in 2-4 settimane. Dipende dalla complessità delle integrazioni e dal volume di training necessario.
               </p>
             </div>
           </div>
@@ -83,15 +85,14 @@ export default function Pricing() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-7">
               <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-black mb-6">
-                APP / GESTIONALI / AI / E-COMMERCE
+                SITI WEB / SOFTWARE / INTEGRAZIONI
               </div>
               <h3 className="text-3xl md:text-5xl font-black tracking-tighter text-black uppercase leading-[0.9] mb-6">
-                Progetti <span className="text-slate-200">su misura</span>
+                Sviluppo <span className="text-slate-200">custom</span>
               </h3>
               <p className="text-slate-500 font-light leading-relaxed max-w-lg">
-                Ogni progetto complesso ha esigenze uniche. App mobile, software gestionali,
-                soluzioni AI, e-commerce — analizziamo le tue necessità e ti presentiamo
-                un preventivo dettagliato, senza sorprese.
+                Oltre agli agenti AI, realizziamo siti web, gestionali, app mobile, e-commerce.
+                Se hai bisogno di software su misura o integrazioni complesse, possiamo occuparcene.
               </p>
             </div>
             <div className="md:col-span-4 md:col-start-9">

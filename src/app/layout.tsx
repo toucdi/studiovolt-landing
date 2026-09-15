@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Studio Volt — Siti Web Professionali per il Tuo Studio",
-  description: "Specializzati nel creare siti web eleganti e ad alte prestazioni per studi dentistici e legali. Minimali, veloci, premium.",
+  title: "Studio Volt — Agenti AI Operativi per PMI e Professionisti",
+  description: "Agenti AI che lavorano davvero: gestiscono inbox, seguono lead, automatizzano processi. Soluzioni su misura per PMI e professionisti italiani.",
   metadataBase: new URL("https://studiovolt.it"),
   icons: {
     icon: [
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Studio Volt — Siti Web Professionali",
-    description: "Il tuo studio merita una presenza online all'altezza. €700, tutto incluso.",
+    title: "Studio Volt — Agenti AI Operativi",
+    description: "Agenti AI che lavorano per te: inbox, lead, client ops. Tecnologia concreta per PMI italiane.",
     url: "https://studiovolt.it",
     siteName: "Studio Volt",
     type: "website",
