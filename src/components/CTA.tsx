@@ -45,13 +45,13 @@ export default function CTA() {
               transition={{ duration: 0.6 }}
               className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] mb-12"
             >
-              Prossimo <br />
-              <span className="text-white/40 italic">passo</span> <br />
-              digitale?
+              Il tuo <br />
+              <span className="text-white/40 italic">agente</span> <br />
+              digitale.
             </motion.h2>
 
             <p className="text-white/60 text-lg leading-relaxed max-w-sm">
-              Scrivici oggi. Riceverai una proposta tecnica entro le prossime 24 ore.
+              Raccontaci i tuoi processi. Ti mostriamo come un agente AI può automatizzarli. Preventivo entro 24 ore.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export default function CTA() {
                   </div>
                   <h3 className="text-2xl font-black uppercase tracking-tight mb-4">Ricevuto</h3>
                   <p className="text-white/60 max-w-xs uppercase text-xs tracking-widest leading-loose">
-                    Ti risponderemo entro 24 ore alla tua email.
+                    Ti risponderemo entro 24 ore. Prepareremo una proposta su misura.
                   </p>
                   <button
                     onClick={() => setStatus("idle")}
@@ -113,11 +113,11 @@ export default function CTA() {
 
                   <div className="flex flex-col gap-3">
                     <label className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">Messaggio</label>
-                    <textarea
+                      <textarea
                       required
                       name="message"
                       rows={4}
-                      placeholder="DETTAGLI DEL TUO PROGETTO..."
+                      placeholder="DESCRIVI I TUOI PROCESSI E COSA VORRESTI AUTOMATIZZARE..."
                       className="bg-transparent border-b border-white/20 py-4 focus:border-white outline-none transition-colors text-lg tracking-tight placeholder:text-white/10"
                     />
                   </div>

@@ -14,7 +14,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-slate-500 text-sm max-w-xs leading-relaxed">
-              Design svizzero, performance italiane. Eleviamo la presenza digitale degli studi professionali con approccio minimale.
+              Agenti AI operativi per PMI e professionisti italiani. Automazione concreta, risultati misurabili.
             </p>
           </div>
 
@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="md:col-span-3 md:col-start-10">
             <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-6">Contatti</h4>
             <div className="flex flex-col gap-4">
-              <a href="mailto:olivia@studiovolt.it" className="text-sm text-slate-500 hover:text-black transition-colors">olivia@studiovolt.it</a>
+              <a href="mailto:sales@studiovolt.it" className="text-sm text-slate-500 hover:text-black transition-colors">sales@studiovolt.it</a>
               <p className="text-sm text-slate-400">P.IVA in corso di registrazione</p>
             </div>
           </div>
