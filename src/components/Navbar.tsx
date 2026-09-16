@@ -2,17 +2,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 
-const navLinks = [
-  { name: "Servizi", href: "#servizi" },
-  { name: "Soluzioni", href: "#soluzioni" },
-  { name: "Metodo", href: "#processo" },
-  { name: "Prezzi", href: "#prezzi" },
-  { name: "FAQ", href: "#faq" },
-];
+type NavbarProps = {
+  locale: Locale;
+};
 
-export default function Navbar() {
+export default function Navbar({ locale }: NavbarProps) {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const dict = getDictionary(locale);
+  const navLinks = dict.nav.links;
 
   return (
     <nav
@@ -39,7 +39,7 @@ export default function Navbar() {
         </motion.a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-12">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link, i) => (
             <motion.a
               key={link.name}
@@ -52,14 +52,41 @@ export default function Navbar() {
               {link.name}
             </motion.a>
           ))}
+          
+          {/* Language Switcher */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="flex items-center gap-2 border-l border-slate-200 pl-8"
+          >
+            <Link
+              href="/"
+              className={`text-xs font-bold uppercase tracking-widest transition-colors ${
+                locale === "it" ? "text-black" : "text-slate-300 hover:text-slate-500"
+              }`}
+            >
+              IT
+            </Link>
+            <span className="text-slate-300">|</span>
+            <Link
+              href="/en"
+              className={`text-xs font-bold uppercase tracking-widest transition-colors ${
+                locale === "en" ? "text-black" : "text-slate-300 hover:text-slate-500"
+              }`}
+            >
+              EN
+            </Link>
+          </motion.div>
+
           <motion.a
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.5 }}
             href="#contatti"
             className="bg-black text-white px-6 py-2 text-sm uppercase tracking-widest"
           >
-            Contattaci
+            {dict.nav.contact}
           </motion.a>
         </div>
 
@@ -96,12 +123,36 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
+              
+              {/* Mobile Language Switcher */}
+              <div className="flex items-center gap-4 justify-center py-2 border-b border-slate-50">
+                <Link
+                  href="/"
+                  className={`text-sm font-bold uppercase tracking-widest transition-colors ${
+                    locale === "it" ? "text-black" : "text-slate-300"
+                  }`}
+                  onClick={() => setMobileMenu(false)}
+                >
+                  IT
+                </Link>
+                <span className="text-slate-300">|</span>
+                <Link
+                  href="/en"
+                  className={`text-sm font-bold uppercase tracking-widest transition-colors ${
+                    locale === "en" ? "text-black" : "text-slate-300"
+                  }`}
+                  onClick={() => setMobileMenu(false)}
+                >
+                  EN
+                </Link>
+              </div>
+
               <a
                 href="#contatti"
                 className="bg-black text-white uppercase tracking-widest py-4 text-center"
                 onClick={() => setMobileMenu(false)}
               >
-                Contattaci
+                {dict.nav.contact}
               </a>
             </div>
           </motion.div>

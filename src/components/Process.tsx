@@ -1,23 +1,10 @@
 "use client";
 import { motion, Variants } from "framer-motion";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 
-const steps = [
-  {
-    num: "01",
-    title: "Consulenza",
-    desc: "Analizziamo le necessità del tuo studio attraverso una diagnosi digitale approfondita.",
-  },
-  {
-    num: "02",
-    title: "Progettazione",
-    desc: "Sviluppiamo la tua infrastruttura con rigore tecnico e precisione estetica in 5 giorni.",
-  },
-  {
-    num: "03",
-    title: "Lancio",
-    desc: "Configuriamo la presenza online definitiva, pronta per accogliere nuovi pazienti.",
-  },
-];
+type ProcessProps = {
+  locale: Locale;
+};
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -38,7 +25,10 @@ const itemVariants: Variants = {
   },
 };
 
-export default function Process() {
+export default function Process({ locale }: ProcessProps) {
+  const dict = getDictionary(locale);
+  const steps = dict.process.steps;
+
   return (
     <section id="processo" className="section-padding bg-white overflow-hidden">
       <div className="container-minimal">
@@ -49,9 +39,11 @@ export default function Process() {
           transition={{ duration: 0.8 }}
           className="mb-24"
         >
-          <span className="text-sm font-medium tracking-[0.2em] uppercase text-muted mb-4 block">Metodologia</span>
+          <span className="text-sm font-medium tracking-[0.2em] uppercase text-muted mb-4 block">
+            {dict.process.sectionTag}
+          </span>
           <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-black">
-            L&apos;approccio Studio Volt.
+            {dict.process.title}
           </h2>
         </motion.div>
 

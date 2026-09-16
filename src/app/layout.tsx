@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png",
   },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "it-IT": "/",
+      "en": "/en",
+    },
+  },
   openGraph: {
     title: "Studio Volt — Siti Web Professionali",
     description: "Il tuo studio merita una presenza online all'altezza. €700, tutto incluso.",

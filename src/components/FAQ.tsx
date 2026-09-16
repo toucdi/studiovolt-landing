@@ -1,33 +1,11 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 
-const faqs = [
-  {
-    q: "Quanto tempo ci vuole per avere il sito pronto?",
-    a: "In media 7 giorni lavorativi dalla conferma dell'ordine. Ti mostriamo una bozza al giorno 5 per raccogliere il tuo feedback.",
-  },
-  {
-    q: "Devo fornire i contenuti (testi, foto)?",
-    a: "Idealmente sì, ma non è obbligatorio. Possiamo aiutarti a scrivere i testi e utilizzare foto professionali royalty-free se necessario.",
-  },
-  {
-    q: "Posso modificare il sito dopo la consegna?",
-    a: "Certo! Ti forniamo l'accesso completo. Per i primi 30 giorni, piccole modifiche sono incluse nel prezzo. Dopo, offriamo pacchetti di assistenza a partire da €50/mese.",
-  },
-  {
-    q: "Il dominio e l'hosting sono inclusi?",
-    a: "Sì, dominio .it e hosting sono inclusi per il primo anno. Dal secondo anno il rinnovo è di €120/anno per hosting + dominio.",
-  },
-  {
-    q: "Il sito sarà ottimizzato per Google?",
-    a: "Assolutamente. Ogni sito include ottimizzazione SEO on-page: struttura corretta, meta tag, velocità di caricamento e markup schema per attività locali.",
-  },
-  {
-    q: "Lavorate solo con professionisti sanitari?",
-    a: "Ci specializziamo in studi medici, dentistici e legali, ma lavoriamo con qualsiasi professionista che necessiti di una presenza online efficace.",
-  },
-];
+type FAQProps = {
+  locale: Locale;
+};
 
 function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
   const [open, setOpen] = useState(false);
@@ -63,20 +41,23 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
   );
 }
 
-export default function FAQ() {
+export default function FAQ({ locale }: FAQProps) {
+  const dict = getDictionary(locale);
+  const faqs = dict.faq.items;
+
   return (
     <section id="faq" className="bg-white py-24 md:py-40">
       <div className="container-minimal">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-5">
             <h2 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-[0.9]">
-              Domande <br />
-              <span className="text-slate-400 underline decoration-1 underline-offset-8">Frequenti</span>
+              {dict.faq.title} <br />
+              <span className="text-slate-400 underline decoration-1 underline-offset-8">{dict.faq.titleUnderline}</span>
             </h2>
           </div>
           <div className="md:col-span-7 flex items-end">
             <p className="text-slate-500 text-lg max-w-sm">
-              Tutto quello che devi sapere sul tuo nuovo sito web professionale.
+              {dict.faq.intro}
             </p>
           </div>
         </div>
