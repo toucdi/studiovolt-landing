@@ -111,6 +111,29 @@ export default function CTA() {
                     </div>
                   </div>
 
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="flex flex-col gap-3">
+                      <label className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">Telefono</label>
+                      <input
+                        required
+                        name="phone"
+                        type="tel"
+                        placeholder="+39 XXX XXX XXXX"
+                        className="bg-transparent border-b border-white/20 py-4 focus:border-white outline-none transition-colors text-lg tracking-tight placeholder:text-white/10"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      <label className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">Azienda / Studio</label>
+                      <input
+                        required
+                        name="company"
+                        type="text"
+                        placeholder="NOME AZIENDA O STUDIO"
+                        className="bg-transparent border-b border-white/20 py-4 focus:border-white outline-none transition-colors text-lg tracking-tight placeholder:text-white/10"
+                      />
+                    </div>
+                  </div>
+
                   <div className="flex flex-col gap-3">
                     <label className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">Messaggio</label>
                     <textarea
