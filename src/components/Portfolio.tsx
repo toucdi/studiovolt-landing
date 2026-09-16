@@ -1,0 +1,95 @@
+"use client";
+import { motion, Variants } from "framer-motion";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
+
+type PortfolioProps = {
+  locale: Locale;
+};
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+export default function Portfolio({ locale }: PortfolioProps) {
+  const dict = getDictionary(locale);
+
+  return (
+    <section id="portfolio" className="section-padding bg-white border-t border-slate-100">
+      <div className="container-minimal">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-24"
+        >
+          <span className="text-sm font-medium tracking-[0.2em] uppercase text-muted mb-4 block">
+            {dict.portfolio.sectionTag}
+          </span>
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-black">
+            {dict.portfolio.title}
+            <br />
+            <span className="text-slate-200">{dict.portfolio.titleGray}</span>
+          </h2>
+          <p className="text-slate-500 font-light leading-relaxed mt-6 max-w-xl">
+            {dict.portfolio.intro}
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-4"
+        >
+          {dict.portfolio.items.map((item) => (
+            <motion.a
+              key={item.domain}
+              href={`https://${item.domain}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={itemVariants}
+              className="group p-8 border-t border-slate-100 md:odd:border-r lg:border-r lg:last:border-r-0 last:border-b md:last:border-b-0 border-b md:border-b-0 hover:bg-slate-50 transition-colors duration-300"
+            >
+              <div className="flex items-start gap-2 mb-3">
+                <h3 className="text-sm font-bold text-black uppercase tracking-widest group-hover:text-slate-600 transition-colors">
+                  {item.domain}
+                </h3>
+                <svg
+                  className="w-3 h-3 text-slate-400 flex-shrink-0 mt-0.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </div>
+              <p className="text-xs text-slate-500 font-light leading-relaxed">
+                {item.description}
+              </p>
+            </motion.a>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}

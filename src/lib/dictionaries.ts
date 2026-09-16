@@ -6,6 +6,7 @@ export const dictionaries = {
       links: [
         { name: "Servizi", href: "#servizi" },
         { name: "Soluzioni", href: "#soluzioni" },
+        { name: "Portfolio", href: "#portfolio" },
         { name: "Metodo", href: "#processo" },
         { name: "Prezzi", href: "#prezzi" },
         { name: "FAQ", href: "#faq" },
@@ -112,6 +113,47 @@ export const dictionaries = {
       customCta: "Parliamone",
       customDisclaimer: "Dedicato a progetti con scope significativo",
     },
+    portfolio: {
+      sectionTag: "Lavori selezionati",
+      title: "Portfolio",
+      titleGray: "progetti.",
+      intro:
+        "Una selezione di progetti realizzati per clienti in diversi settori. Sviluppo web, applicazioni, piattaforme digitali.",
+      items: [
+        {
+          domain: "hailapi.com",
+          description: "Piattaforma API e sviluppo servizi digitali",
+        },
+        {
+          domain: "getrevi.app",
+          description: "Applicazione web per gestione progetti",
+        },
+        {
+          domain: "ortottistaroma.com",
+          description: "Sito web professionale per studio ortottico",
+        },
+        {
+          domain: "veiled.id",
+          description: "Piattaforma identità digitale e verifica",
+        },
+        {
+          domain: "ai-daily.news",
+          description: "Portale news tecnologia e intelligenza artificiale",
+        },
+        {
+          domain: "olbiarentcar.com",
+          description: "Piattaforma prenotazione noleggio auto",
+        },
+        {
+          domain: "salugenesis.it",
+          description: "Portale salute e benessere digitale",
+        },
+        {
+          domain: "osteopaty.it",
+          description: "Sito web studio osteopatico professionale",
+        },
+      ],
+    },
     solutions: {
       sectionTag: "Oltre agli agenti",
       title: "Sviluppo software",
@@ -209,6 +251,7 @@ export const dictionaries = {
       navTitle: "Navigazione",
       navLinks: [
         { name: "Servizi", href: "#servizi" },
+        { name: "Portfolio", href: "#portfolio" },
         { name: "Metodo", href: "#processo" },
         { name: "Prezzi", href: "#prezzi" },
         { name: "FAQ", href: "#faq" },
@@ -225,6 +268,7 @@ export const dictionaries = {
       links: [
         { name: "Services", href: "#servizi" },
         { name: "Solutions", href: "#soluzioni" },
+        { name: "Portfolio", href: "#portfolio" },
         { name: "Method", href: "#processo" },
         { name: "Pricing", href: "#prezzi" },
         { name: "FAQ", href: "#faq" },
@@ -331,6 +375,47 @@ export const dictionaries = {
       customCta: "Let's talk",
       customDisclaimer: "Dedicated to projects with significant scope",
     },
+    portfolio: {
+      sectionTag: "Selected work",
+      title: "Portfolio",
+      titleGray: "projects.",
+      intro:
+        "A selection of projects delivered for clients across different sectors. Web development, applications, digital platforms.",
+      items: [
+        {
+          domain: "hailapi.com",
+          description: "API platform and digital services development",
+        },
+        {
+          domain: "getrevi.app",
+          description: "Web application for project management",
+        },
+        {
+          domain: "ortottistaroma.com",
+          description: "Professional website for orthoptic practice",
+        },
+        {
+          domain: "veiled.id",
+          description: "Digital identity and verification platform",
+        },
+        {
+          domain: "ai-daily.news",
+          description: "Technology and artificial intelligence news portal",
+        },
+        {
+          domain: "olbiarentcar.com",
+          description: "Car rental booking platform",
+        },
+        {
+          domain: "salugenesis.it",
+          description: "Digital health and wellness portal",
+        },
+        {
+          domain: "osteopaty.it",
+          description: "Professional osteopathic practice website",
+        },
+      ],
+    },
     solutions: {
       sectionTag: "Beyond agents",
       title: "Custom software",
@@ -428,6 +513,7 @@ export const dictionaries = {
       navTitle: "Navigation",
       navLinks: [
         { name: "Services", href: "#servizi" },
+        { name: "Portfolio", href: "#portfolio" },
         { name: "Method", href: "#processo" },
         { name: "Pricing", href: "#prezzi" },
         { name: "FAQ", href: "#faq" },
