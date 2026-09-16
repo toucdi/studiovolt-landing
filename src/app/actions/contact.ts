@@ -5,9 +5,11 @@ import nodemailer from "nodemailer";
 export async function sendContactEmail(formData: FormData) {
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const company = formData.get("company") as string;
     const message = formData.get("message") as string;
 
-    if (!name || !email || !message) {
+    if (!name || !email || !phone || !company || !message) {
         return { error: "Tutti i campi sono obbligatori." };
     }
 
@@ -22,17 +24,19 @@ export async function sendContactEmail(formData: FormData) {
     });
 
     try {
-        // Send email to the recipient (Olivia)
+        // Send email to the configured recipient
         await transporter.sendMail({
             from: `"Studio Volt" <${process.env.SMTP_USER}>`,
             to: process.env.CONTACT_RECIPIENT,
             subject: `Nuovo Messaggio da ${name} - Studio Volt`,
-            text: `Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`,
+            text: `Nome: ${name}\nEmail: ${email}\nTelefono: ${phone}\nAzienda / Studio: ${company}\n\nMessaggio:\n${message}`,
             html: `
         <div style="font-family: sans-serif; padding: 20px; color: #333;">
           <h2 style="color: #000;">Nuovo Messaggio di Contatto</h2>
           <p><strong>Nome:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Telefono:</strong> ${phone}</p>
+          <p><strong>Azienda / Studio:</strong> ${company}</p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
           <p><strong>Messaggio:</strong></p>
           <p style="white-space: pre-wrap;">${message}</p>
