@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Services from "@/components/Services";
+import Portfolio from "@/components/Portfolio";
 import Process from "@/components/Process";
 import Pricing from "@/components/Pricing";
 import Solutions from "@/components/Solutions";
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero locale={locale} />
       <Stats locale={locale} />
       <Services locale={locale} />
+      <Portfolio locale={locale} />
       <Process locale={locale} />
       <Pricing locale={locale} />
       <Solutions locale={locale} />

@@ -5,6 +5,7 @@ export const dictionaries = {
     nav: {
       links: [
         { name: "Servizi", href: "#servizi" },
+        { name: "Portfolio", href: "#portfolio" },
         { name: "Soluzioni", href: "#soluzioni" },
         { name: "Metodo", href: "#processo" },
         { name: "Prezzi", href: "#prezzi" },
@@ -57,6 +58,54 @@ export const dictionaries = {
         },
       ],
     },
+    portfolio: {
+      sectionTag: "Progetti",
+      title: "Lavori",
+      titleGray: "selezionati.",
+      intro: "Progetti realizzati per clienti italiani. Piattaforme, app, siti web. Tecnologia concreta, risultati misurabili.",
+      items: [
+        {
+          domain: "hailapi.com",
+          title: "Hail API",
+          desc: "Piattaforma API per servizi sanitari digitali",
+        },
+        {
+          domain: "getrevi.app",
+          title: "Revi",
+          desc: "App gestionale per prenotazioni e clienti",
+        },
+        {
+          domain: "ortottistaroma.com",
+          title: "Ortottista Roma",
+          desc: "Sito web professionale per studio ortottico",
+        },
+        {
+          domain: "veiled.id",
+          title: "Veiled",
+          desc: "Sistema di identità digitale sicura",
+        },
+        {
+          domain: "ai-daily.news",
+          title: "AI Daily News",
+          desc: "Newsletter automatizzata con AI",
+        },
+        {
+          domain: "olbiarentcar.com",
+          title: "Olbia Rent Car",
+          desc: "Piattaforma prenotazione auto online",
+        },
+        {
+          domain: "salugenesis.it",
+          title: "Salugenesis",
+          desc: "Portale sanità digitale e telemedicina",
+        },
+        {
+          domain: "osteopaty.it",
+          title: "Osteopaty",
+          desc: "Rete di osteopati e gestione pazienti",
+        },
+      ],
+    },
     process: {
       sectionTag: "Come lavoriamo",
       title: "Dall'idea all'operatività.",
@@ -85,7 +134,7 @@ export const dictionaries = {
       pricePrefix: "Da configurare insieme",
       price: "Preventivo",
       priceDesc:
-        "Ogni azienda è diversa. Analizziamo il tuo caso, definiamo scope e obiettivi, ti presentiamo un preventivo chiaro. Modello one-time + manutenzione oppure canone mensile all-inclusive.",
+        "Ogni azienda è diversa. Analizziamo il tuo caso, definiamo scope e obiettivi, ti presentiamo un preventivo chiaro. Modello one-time + manutenzione oppure canone mensile.",
       cta: "Richiedi Preventivo",
       disclaimer: "Rispondiamo entro 24 ore",
       featuresTitle: "Cosa è incluso",
@@ -209,6 +258,7 @@ export const dictionaries = {
       navTitle: "Navigazione",
       navLinks: [
         { name: "Servizi", href: "#servizi" },
+        { name: "Portfolio", href: "#portfolio" },
         { name: "Metodo", href: "#processo" },
         { name: "Prezzi", href: "#prezzi" },
         { name: "FAQ", href: "#faq" },
@@ -224,6 +274,7 @@ export const dictionaries = {
     nav: {
       links: [
         { name: "Services", href: "#servizi" },
+        { name: "Portfolio", href: "#portfolio" },
         { name: "Solutions", href: "#soluzioni" },
         { name: "Method", href: "#processo" },
         { name: "Pricing", href: "#prezzi" },
@@ -276,6 +327,54 @@ export const dictionaries = {
         },
       ],
     },
+    portfolio: {
+      sectionTag: "Projects",
+      title: "Selected",
+      titleGray: "works.",
+      intro: "Projects delivered for Italian clients. Platforms, apps, websites. Concrete technology, measurable results.",
+      items: [
+        {
+          domain: "hailapi.com",
+          title: "Hail API",
+          desc: "API platform for digital healthcare services",
+        },
+        {
+          domain: "getrevi.app",
+          title: "Revi",
+          desc: "Management app for bookings and clients",
+        },
+        {
+          domain: "ortottistaroma.com",
+          title: "Ortottista Roma",
+          desc: "Professional website for orthoptic practice",
+        },
+        {
+          domain: "veiled.id",
+          title: "Veiled",
+          desc: "Secure digital identity system",
+        },
+        {
+          domain: "ai-daily.news",
+          title: "AI Daily News",
+          desc: "AI-powered automated newsletter",
+        },
+        {
+          domain: "olbiarentcar.com",
+          title: "Olbia Rent Car",
+          desc: "Online car rental booking platform",
+        },
+        {
+          domain: "salugenesis.it",
+          title: "Salugenesis",
+          desc: "Digital health and telemedicine portal",
+        },
+        {
+          domain: "osteopaty.it",
+          title: "Osteopaty",
+          desc: "Osteopath network and patient management",
+        },
+      ],
+    },
     process: {
       sectionTag: "How we work",
       title: "From idea to operations.",
@@ -304,7 +403,7 @@ export const dictionaries = {
       pricePrefix: "To be configured together",
       price: "Quote",
       priceDesc:
-        "Every company is different. We analyze your case, define scope and objectives, present a clear quote. One-time + maintenance or monthly all-inclusive subscription.",
+        "Every company is different. We analyze your case, define scope and objectives, present a clear quote. One-time + maintenance or monthly subscription.",
       cta: "Request Quote",
       disclaimer: "We respond within 24 hours",
       featuresTitle: "What's included",
@@ -428,6 +527,7 @@ export const dictionaries = {
       navTitle: "Navigation",
       navLinks: [
         { name: "Services", href: "#servizi" },
+        { name: "Portfolio", href: "#portfolio" },
         { name: "Method", href: "#processo" },
         { name: "Pricing", href: "#prezzi" },
         { name: "FAQ", href: "#faq" },
