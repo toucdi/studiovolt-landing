@@ -1,6 +1,6 @@
 # Studio Volt - Landing Page Professionale
 
-Una landing page moderna e professionale per **Studio Volt**, una digital agency specializzata nella creazione di siti web per professionisti (dentisti, medici, avvocati).
+Una landing page moderna e professionale per **Studio Volt**, una software house specializzata in agenti AI operativi e sviluppo software personalizzato per PMI e professionisti italiani.
 
 ## ✨ Caratteristiche
 
@@ -14,7 +14,7 @@ Una landing page moderna e professionale per **Studio Volt**, una digital agency
 ## 🎯 Sezioni
 
 1. **Hero** - Headline forte con social proof ("Siti consegnati in 7 giorni", "100% soddisfatti o rimborsati")
-2. **Servizi** - Sito web €700, SEO base, mobile-first
+2. **Servizi** - Agenti AI operativi, sviluppo software su misura
 3. **Come Funziona** - 3 step: Ti contattiamo → Creiamo la bozza → Pubblichiamo
 4. **Chi Siamo** - Olivia Spendersen, Digital Consultant
 5. **Contatti** - Form semplice (nome/email/messaggio)
@@ -105,5 +105,5 @@ Il form di contatto utilizza SMTP per l'invio delle email. Per configurarlo:
 
 **Sviluppato per**: Studio Volt (studiovolt.it)  
 **Design**: Moderno, professionale, italiano  
-**Target**: Dentisti, Medici, Avvocati  
+**Target**: PMI e Professionisti Italiani  
 **Consegna**: 7 giorni garantiti
