@@ -73,10 +73,21 @@ Il sito è ottimizzato mobile-first con:
 
 ## 📧 Contact Form
 
-Il form di contatto è funzionale e pronto per l'integrazione con servizi come:
-- Netlify Forms
-- EmailJS
-- API custom
+Il form di contatto utilizza SMTP per l'invio delle email. Per configurarlo:
+
+1. **Copia `.env.example` in `.env.local`**:
+   ```bash
+   cp .env.example .env.local
+   ```
+
+2. **Configura le variabili d'ambiente**:
+   - `SMTP_HOST` - Server SMTP (es. smtp.gmail.com)
+   - `SMTP_PORT` - Porta SMTP (solitamente 465 per SSL)
+   - `SMTP_USER` - Username SMTP (la tua email)
+   - `SMTP_PASS` - Password SMTP o password app-specific
+   - `CONTACT_RECIPIENT` - Email destinataria (suggerito: sales@studiovolt.it)
+
+3. **Nota**: Non committare mai il file `.env.local` con credenziali reali.
 
 ## 🔧 Tecnologie Utilizzate
 

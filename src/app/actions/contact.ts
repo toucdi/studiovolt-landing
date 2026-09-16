@@ -5,10 +5,12 @@ import nodemailer from "nodemailer";
 export async function sendContactEmail(formData: FormData) {
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const company = formData.get("company") as string;
     const message = formData.get("message") as string;
     const locale = formData.get("locale") as string || "it";
 
-    if (!name || !email || !message) {
+    if (!name || !email || !phone || !company || !message) {
         return { error: locale === "en" ? "All fields are required." : "Tutti i campi sono obbligatori." };
     }
 
@@ -23,10 +25,12 @@ export async function sendContactEmail(formData: FormData) {
     });
 
     try {
-        // Send email to the recipient
+        // Send email to the configured recipient
         const isEnglish = locale === "en";
         const subjectPrefix = isEnglish ? "EN Inquiry" : "Nuovo Messaggio";
         const nameLabel = isEnglish ? "Name" : "Nome";
+        const phoneLabel = isEnglish ? "Phone" : "Telefono";
+        const companyLabel = isEnglish ? "Company / Practice" : "Azienda / Studio";
         const messageLabel = isEnglish ? "Message" : "Messaggio";
         const contactTitle = isEnglish ? "New Contact Inquiry" : "Nuovo Messaggio di Contatto";
 
@@ -34,12 +38,14 @@ export async function sendContactEmail(formData: FormData) {
             from: `"Studio Volt" <${process.env.SMTP_USER}>`,
             to: process.env.CONTACT_RECIPIENT,
             subject: `${subjectPrefix} from ${name} - Studio Volt`,
-            text: `${nameLabel}: ${name}\nEmail: ${email}\n\n${messageLabel}:\n${message}`,
+            text: `${nameLabel}: ${name}\nEmail: ${email}\n${phoneLabel}: ${phone}\n${companyLabel}: ${company}\n\n${messageLabel}:\n${message}`,
             html: `
         <div style="font-family: sans-serif; padding: 20px; color: #333;">
           <h2 style="color: #000;">${contactTitle}</h2>
           <p><strong>${nameLabel}:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
+          <p><strong>${phoneLabel}:</strong> ${phone}</p>
+          <p><strong>${companyLabel}:</strong> ${company}</p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
           <p><strong>${messageLabel}:</strong></p>
           <p style="white-space: pre-wrap;">${message}</p>

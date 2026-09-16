@@ -53,8 +53,13 @@ export default function CTA({ locale }: CTAProps) {
               className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85] mb-12"
             >
               {dict.cta.title[0]} <br />
-              <span className="text-white/40 italic">{dict.cta.title[1]}</span> <br />
-              {dict.cta.title[2]}
+              <span className="text-white/40 italic">{dict.cta.title[1]}</span>
+              {dict.cta.title.length > 2 && (
+                <>
+                  {" "}<br />
+                  {dict.cta.title[2]}
+                </>
+              )}
             </motion.h2>
 
             <p className="text-white/60 text-lg leading-relaxed max-w-sm">
@@ -118,6 +123,33 @@ export default function CTA({ locale }: CTAProps) {
                         type="email"
                         placeholder={dict.cta.form.emailPlaceholder}
                         className="bg-transparent border-b border-white/20 py-4 focus:border-white outline-none transition-colors text-lg tracking-tight placeholder:text-white/10 uppercase"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="flex flex-col gap-3">
+                      <label className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">
+                        {dict.cta.form.phone}
+                      </label>
+                      <input
+                        required
+                        name="phone"
+                        type="tel"
+                        placeholder={dict.cta.form.phonePlaceholder}
+                        className="bg-transparent border-b border-white/20 py-4 focus:border-white outline-none transition-colors text-lg tracking-tight placeholder:text-white/10"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      <label className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">
+                        {dict.cta.form.company}
+                      </label>
+                      <input
+                        required
+                        name="company"
+                        type="text"
+                        placeholder={dict.cta.form.companyPlaceholder}
+                        className="bg-transparent border-b border-white/20 py-4 focus:border-white outline-none transition-colors text-lg tracking-tight placeholder:text-white/10"
                       />
                     </div>
                   </div>
