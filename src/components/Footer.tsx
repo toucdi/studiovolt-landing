@@ -1,4 +1,13 @@
-export default function Footer() {
+import Link from "next/link";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
+
+type FooterProps = {
+  locale: Locale;
+};
+
+export default function Footer({ locale }: FooterProps) {
+  const dict = getDictionary(locale);
+
   return (
     <footer className="bg-white border-t border-slate-100 py-24">
       <div className="container-minimal">
@@ -14,36 +23,69 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-slate-500 text-sm max-w-xs leading-relaxed">
-              Agenti AI operativi per PMI e professionisti italiani. Automazione concreta, risultati misurabili.
+              {dict.footer.tagline}
             </p>
           </div>
 
           {/* Links */}
           <div className="md:col-span-2 md:col-start-7">
-            <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-6">Navigazione</h4>
+            <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-6">
+              {dict.footer.navTitle}
+            </h4>
             <div className="flex flex-col gap-4">
-              <a href="#servizi" className="text-sm text-slate-500 hover:text-black transition-colors uppercase tracking-widest">Servizi</a>
-              <a href="#processo" className="text-sm text-slate-500 hover:text-black transition-colors uppercase tracking-widest">Metodo</a>
-              <a href="#prezzi" className="text-sm text-slate-500 hover:text-black transition-colors uppercase tracking-widest">Prezzi</a>
-              <a href="#faq" className="text-sm text-slate-500 hover:text-black transition-colors uppercase tracking-widest">FAQ</a>
+              {dict.footer.navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-sm text-slate-500 hover:text-black transition-colors uppercase tracking-widest"
+                >
+                  {link.name}
+                </a>
+              ))}
             </div>
           </div>
 
           <div className="md:col-span-3 md:col-start-10">
-            <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-6">Contatti</h4>
+            <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-6">
+              {dict.footer.contactTitle}
+            </h4>
             <div className="flex flex-col gap-4">
-              <a href="mailto:sales@studiovolt.it" className="text-sm text-slate-500 hover:text-black transition-colors">sales@studiovolt.it</a>
-              <p className="text-sm text-slate-400">P.IVA in corso di registrazione</p>
+              <a href="mailto:sales@studiovolt.it" className="text-sm text-slate-500 hover:text-black transition-colors">
+                sales@studiovolt.it
+              </a>
+              <p className="text-sm text-slate-400">{dict.footer.vat}</p>
             </div>
           </div>
         </div>
 
-        <div className="mt-24 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between gap-4">
+        <div className="mt-24 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[10px] text-slate-400 font-bold tracking-widest uppercase">
-            © {new Date().getFullYear()} Studio Volt · All Rights Reserved
+            {dict.footer.copyright.replace("{year}", new Date().getFullYear().toString())}
           </p>
+          
+          {/* Footer Language Switcher */}
+          <div className="flex items-center gap-3">
+            <Link
+              href="/"
+              className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${
+                locale === "it" ? "text-black" : "text-slate-300 hover:text-slate-500"
+              }`}
+            >
+              IT
+            </Link>
+            <span className="text-slate-300 text-[10px]">|</span>
+            <Link
+              href="/en"
+              className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${
+                locale === "en" ? "text-black" : "text-slate-300 hover:text-slate-500"
+              }`}
+            >
+              EN
+            </Link>
+          </div>
+
           <p className="text-[10px] text-slate-300 font-medium">
-            Swiss Modernism 2.0 / 01
+            {dict.footer.edition}
           </p>
         </div>
       </div>

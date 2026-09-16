@@ -1,14 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 
-const stats = [
-  { value: "24/7", label: "AGENTI SEMPRE ATTIVI" },
-  { value: "80%", label: "TEMPO RISPARMIATO" },
-  { value: "100%", label: "OPERATIVITÀ ITALIANA" },
-  { value: "∞", label: "TASK AUTOMATIZZATI" },
-];
+type StatsProps = {
+  locale: Locale;
+};
 
-export default function Stats() {
+export default function Stats({ locale }: StatsProps) {
+  const dict = getDictionary(locale);
+  const stats = dict.stats;
   return (
     <section className="bg-white border-b border-slate-100 py-24">
       <div className="container-minimal">

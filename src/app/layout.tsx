@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png",
   },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "it-IT": "/",
+      "en": "/en",
+    },
+  },
   openGraph: {
     title: "Studio Volt — Agenti AI Operativi",
     description: "Agenti AI che lavorano per te: inbox, lead, client ops. Tecnologia concreta per PMI italiane.",

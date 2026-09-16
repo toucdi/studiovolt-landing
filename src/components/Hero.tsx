@@ -1,7 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 
-export default function Hero() {
+type HeroProps = {
+  locale: Locale;
+};
+
+export default function Hero({ locale }: HeroProps) {
+  const dict = getDictionary(locale);
   return (
     <section className="relative min-h-screen flex items-center bg-white overflow-hidden pt-20">
       {/* Background Grid Lines */}
@@ -25,13 +31,13 @@ export default function Hero() {
             <div className="flex items-center gap-4 mb-12">
               <span className="w-12 h-px bg-black" />
               <span className="text-xs font-bold tracking-[0.4em] uppercase text-black">
-                Agenti AI / Operativi
+                {dict.hero.tagline}
               </span>
             </div>
 
             <h1 className="text-6xl md:text-[9rem] font-black tracking-tighter leading-[0.8] text-black uppercase mb-16">
-              Agenti AI <br />
-              <span className="text-slate-200">che lavorano.</span>
+              {dict.hero.title[0]} <br />
+              <span className="text-slate-200">{dict.hero.title[1]}</span>
             </h1>
           </motion.div>
 
@@ -43,7 +49,7 @@ export default function Hero() {
               className="md:col-span-7"
             >
               <p className="text-xl md:text-3xl text-black font-medium leading-tight tracking-tight">
-                Non chatbot. Agenti operativi che gestiscono inbox, seguono lead, automatizzano processi. Tecnologia concreta per PMI e professionisti italiani.
+                {dict.hero.description}
               </p>
             </motion.div>
 
@@ -53,11 +59,11 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="md:col-span-4 md:col-start-9 flex flex-col gap-6"
             >
-              <a href="#contatti" className="btn-minimal text-xl py-6">
-                Scopri il Tuo Agente
+              <a href="#servizi" className="btn-minimal text-xl py-6">
+                {dict.hero.cta}
               </a>
               <p className="text-[10px] font-bold tracking-widest uppercase text-slate-400">
-                Preventivo su misura / Consulenza gratuita
+                {dict.hero.availability}
               </p>
             </motion.div>
           </div>

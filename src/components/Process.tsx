@@ -1,23 +1,10 @@
 "use client";
 import { motion, Variants } from "framer-motion";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 
-const steps = [
-  {
-    num: "01",
-    title: "Discovery",
-    desc: "Analizziamo i tuoi processi attuali. Identifichiamo le attività ripetitive, i colli di bottiglia, le opportunità per l'automazione.",
-  },
-  {
-    num: "02",
-    title: "Agente Live",
-    desc: "Configuriamo e attiviamo l'agente. Integrato con le tue piattaforme (email, CRM, documenti), inizia a lavorare. Test, affinamento, go-live.",
-  },
-  {
-    num: "03",
-    title: "Evoluzione",
-    desc: "L'agente impara. Monitoriamo le performance, ottimizziamo le routine, aggiungiamo capacità. Supporto continuo incluso.",
-  },
-];
+type ProcessProps = {
+  locale: Locale;
+};
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -38,7 +25,10 @@ const itemVariants: Variants = {
   },
 };
 
-export default function Process() {
+export default function Process({ locale }: ProcessProps) {
+  const dict = getDictionary(locale);
+  const steps = dict.process.steps;
+
   return (
     <section id="processo" className="section-padding bg-white overflow-hidden">
       <div className="container-minimal">
@@ -49,9 +39,11 @@ export default function Process() {
           transition={{ duration: 0.8 }}
           className="mb-24"
         >
-          <span className="text-sm font-medium tracking-[0.2em] uppercase text-muted mb-4 block">Come lavoriamo</span>
+          <span className="text-sm font-medium tracking-[0.2em] uppercase text-muted mb-4 block">
+            {dict.process.sectionTag}
+          </span>
           <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-black">
-            Dall&apos;idea all&apos;operatività.
+            {dict.process.title}
           </h2>
         </motion.div>
 

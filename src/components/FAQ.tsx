@@ -1,33 +1,11 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 
-const faqs = [
-  {
-    q: "Cosa intendete per 'agente AI operativo'?",
-    a: "Non un semplice chatbot. Un sistema che lavora autonomamente: legge email, classifica richieste, risponde, esegue task, si integra con i tuoi tool (CRM, documenti, calendari). Fa lavoro reale, 24/7.",
-  },
-  {
-    q: "Quali integrazioni supportate?",
-    a: "Email (Gmail, Outlook), CRM (HubSpot, Pipedrive), documenti (Google Drive, Dropbox), calendari, Slack, Notion, e molti altri. Se usi un tool standard, probabilmente lo supportiamo o possiamo integrarlo.",
-  },
-  {
-    q: "I miei dati sono al sicuro?",
-    a: "Sì. Tutto in conformità GDPR. I dati restano in Europa, non vengono usati per training di modelli pubblici. Accessi tracciati, crittografia end-to-end, contratto DPA disponibile.",
-  },
-  {
-    q: "Quanto costa realmente un agente?",
-    a: "Dipende da scope e complessità. Range indicativo: da €2.000 one-time + manutenzione, oppure canone mensile da €500. Ti diamo un preventivo dettagliato dopo la discovery gratuita.",
-  },
-  {
-    q: "L'agente può sbagliare? Come lo controllate?",
-    a: "Sì, può sbagliare. Per questo lavoriamo con approval loop su azioni critiche, log completi, dashboard di monitoraggio. Tu vedi tutto quello che fa. Nel tempo migliora, ma la supervisione umana resta importante.",
-  },
-  {
-    q: "Posso iniziare con un progetto piccolo?",
-    a: "Assolutamente. Molti clienti partono con un caso d'uso limitato (es. solo gestione inbox) e poi espandono. È il modo migliore per testare il valore prima di investire su larga scala.",
-  },
-];
+type FAQProps = {
+  locale: Locale;
+};
 
 function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
   const [open, setOpen] = useState(false);
@@ -63,20 +41,23 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
   );
 }
 
-export default function FAQ() {
+export default function FAQ({ locale }: FAQProps) {
+  const dict = getDictionary(locale);
+  const faqs = dict.faq.items;
+
   return (
     <section id="faq" className="bg-white py-24 md:py-40">
       <div className="container-minimal">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-5">
             <h2 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-[0.9]">
-              Domande <br />
-              <span className="text-slate-400 underline decoration-1 underline-offset-8">Frequenti</span>
+              {dict.faq.title} <br />
+              <span className="text-slate-400 underline decoration-1 underline-offset-8">{dict.faq.titleUnderline}</span>
             </h2>
           </div>
           <div className="md:col-span-7 flex items-end">
             <p className="text-slate-500 text-lg max-w-sm">
-              Tutto quello che devi sapere sugli agenti AI operativi per la tua azienda.
+              {dict.faq.intro}
             </p>
           </div>
         </div>
