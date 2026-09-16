@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Services from "@/components/Services";
+import Portfolio from "@/components/Portfolio";
 import Process from "@/components/Process";
 import Pricing from "@/components/Pricing";
 import Solutions from "@/components/Solutions";
@@ -11,9 +12,9 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Studio Volt — Professional Websites for Your Practice",
+  title: "Studio Volt — Operational AI Agents for SMEs and Professionals",
   description:
-    "Specialized in creating elegant, high-performance websites for dental and legal practices. Minimal, fast, premium.",
+    "AI agents that truly work: manage inboxes, follow up leads, automate processes. Custom solutions for Italian SMEs and professionals.",
   metadataBase: new URL("https://studiovolt.it"),
   alternates: {
     canonical: "/en",
@@ -23,9 +24,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Studio Volt — Professional Websites",
+    title: "Studio Volt — Operational AI Agents",
     description:
-      "Your practice deserves an online presence that matches its excellence. €700, all-inclusive.",
+      "AI agents working for you: inbox, leads, client ops. Concrete technology for Italian SMEs.",
     url: "https://studiovolt.it/en",
     siteName: "Studio Volt",
     type: "website",
@@ -42,6 +43,7 @@ export default function EnglishHome() {
       <Hero locale={locale} />
       <Stats locale={locale} />
       <Services locale={locale} />
+      <Portfolio locale={locale} />
       <Process locale={locale} />
       <Pricing locale={locale} />
       <Solutions locale={locale} />

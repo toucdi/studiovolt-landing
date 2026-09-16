@@ -1,24 +1,27 @@
 # Studio Volt - Landing Page Professionale
 
-Una landing page moderna e professionale per **Studio Volt**, una digital agency specializzata nella creazione di siti web per professionisti (dentisti, medici, avvocati).
+Una landing page moderna e professionale per **Studio Volt**, una digital agency specializzata in agenti AI operativi e sviluppo software su misura per PMI e professionisti italiani.
 
 ## ✨ Caratteristiche
 
-- **Next.js 15** con TypeScript
+- **Next.js 16** con TypeScript
 - **Tailwind CSS** per lo styling
 - **Design mobile-first** completamente responsive  
-- **Colori**: nero, bianco con accenti gold/amber
-- **Lingua**: Italiano
-- **Tono**: Professionale ma accessibile, non corporate/freddo
+- **Colori**: nero, bianco con tonalità slate
+- **Multilingua**: Italiano `/` e Inglese `/en`
+- **Tono**: Professionale ma accessibile, tecnologia concreta
 
 ## 🎯 Sezioni
 
-1. **Hero** - Headline forte con social proof ("Siti consegnati in 7 giorni", "100% soddisfatti o rimborsati")
-2. **Servizi** - Sito web €700, SEO base, mobile-first
-3. **Come Funziona** - 3 step: Ti contattiamo → Creiamo la bozza → Pubblichiamo
-4. **Chi Siamo** - Olivia Spendersen, Digital Consultant
-5. **Contatti** - Form semplice (nome/email/messaggio)
-6. **Footer** - P.IVA placeholder e informazioni di contatto
+1. **Hero** - Agenti AI operativi che lavorano per te
+2. **Servizi** - Capacità degli agenti: inbox, lead, operazioni clienti, analisi documenti
+3. **Portfolio** - Progetti realizzati con 8 case study
+4. **Processo** - Discovery, Agente Live, Evoluzione
+5. **Prezzi** - Preventivi su misura, progetti complessi
+6. **Soluzioni** - Sviluppo software personalizzato oltre agli agenti
+7. **FAQ** - Domande frequenti
+8. **Contatti** - Form con nome, email, telefono, azienda e messaggio
+9. **Footer** - P.IVA e informazioni di contatto
 
 ## 🚀 Sviluppo
 
@@ -55,13 +58,15 @@ Nome: @
 Valore: 76.76.19.61
 ```
 
-## 🎨 Colori Personalizzati
+## 🎨 Design System
 
-Il progetto utilizza una palette di colori gold/amber personalizzata:
+Il progetto utilizza uno stile Swiss Modernism 2.0:
 
-- `gold-400`: #fbbf24
-- `gold-500`: #f59e0b (primary)
-- `gold-600`: #d97706
+- Tipografia: Inter (Google Fonts)
+- Colori: Black, White, Slate tones
+- Layout: Grid-based, minimal borders
+- Animazioni: Framer Motion con stagger effects
+- Spaziatura: Ampia e funzionale
 
 ## 📱 Mobile-First
 
@@ -91,19 +96,20 @@ Il form di contatto utilizza SMTP per l'invio delle email. Per configurarlo:
 
 ## 🔧 Tecnologie Utilizzate
 
-- **Framework**: Next.js 15
-- **Styling**: Tailwind CSS
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS 4
 - **Language**: TypeScript
-- **Icons**: Heroicons (via SVG)
+- **Animation**: Framer Motion
 - **Fonts**: Inter (Google Fonts)
+- **Email**: Nodemailer
 
 ## 📄 Licenza
 
-© 2024 Studio Volt. Tutti i diritti riservati.
+© 2025 Studio Volt. Tutti i diritti riservati.
 
 ---
 
 **Sviluppato per**: Studio Volt (studiovolt.it)  
-**Design**: Moderno, professionale, italiano  
-**Target**: Dentisti, Medici, Avvocati  
-**Consegna**: 7 giorni garantiti
+**Design**: Swiss Modernism 2.0 / Minimal  
+**Target**: PMI e professionisti italiani  
+**Focus**: Agenti AI operativi + Software su misura
